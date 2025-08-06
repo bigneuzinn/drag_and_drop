@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <header>
+        <h1>TIER LIST - GUITARRAS MAIS BONITAS</h1>
+        <p>Arraste as imagens para classificar as guitarras por beleza</p>
+    </header>
+
+    <main>
+        <div class="tier">
+            <div class="tier-label" id="S">SEI NEM EXPRESSAR</div>
+            <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+        </div>
+        <div class="tier">
+            <div class="tier-label" id="A">OBRA DE ARTE</div>
+            <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+        </div>
+        <div class="tier">
+            <div class="tier-label" id="B">BONITINHA</div>
+            <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+        </div>
+        <div class="tier">
+            <div class="tier-label" id="C">APENAS NÃO</div>
+            <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+        </div>
+        <div class="tier">
+            <div class="tier-label" id="D">QUEM DEU A IDEIA?</div>
+            <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+        </div>
+
+        <div class="items-container">
+            <h3 class="items-title">GUITARRAS PARA CLASSIFICAR</h3>
+            <div class="guitars-grid">
+                <img src="img/stratocaster.jpg" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar1" alt="Fender Stratocaster">
+                <img src="img/les paul.jpg" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar2" alt="Gibson Les Paul">
+                <img src="img/Custom24.jpg" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar3" alt="PRS Custom 24">
+                <img src="img/white_falcon.webp" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar4" alt="Gretsch White Falcon">
+                <img src="img/ibanez.png" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar5" alt="Ibanez JEM">
+                <img src="img/gibson.webp" class="guitar-img" draggable="true" ondragstart="drag(event)" id="guitar6" alt="Gibson SG">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Crie sua própria classificação das guitarras mais bonitas!</p>
+        <p>Imagens meramente ilustrativas | Rock on! 🤘</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

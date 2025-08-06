@@ -1,0 +1,202 @@
+:root {
+    --color-s: #ff3860;
+    --color-a: #ff7f50;
+    --color-b: #ffb347;
+    --color-c: #8ac24a;
+    --color-d: #42a5f5;
+    --color-dark: #1a1a2e;
+    --color-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    background-image: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
+                    url('https://i.imgur.com/JqYeZVL.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border-bottom: 3px solid var(--color-s);
+}
+
+h1 {
+    font-family: 'Rock Salt', cursive;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.tier {
+    display: flex;
+    margin: 15px 0;
+    min-height: 140px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.tier:hover {
+    transform: translateY(-3px);
+}
+
+.tier-label {
+    width: 120px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+.tier-items {
+    flex: 1;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    min-height: 100px;
+    transition: all 0.3s;
+}
+
+.tier-items.highlight {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.guitar-img {
+    width: 180px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: move;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.guitar-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.items-container {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.items-title {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.guitars-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #aaa;
+    font-size: 0.9rem;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cores específicas para cada tier */
+#S { 
+    background-color: var(--color-s);
+    background-image: linear-gradient(135deg, var(--color-s), #ff144b);
+}
+#A { 
+    background-color: var(--color-a);
+    background-image: linear-gradient(135deg, var(--color-a), #ff6b3d);
+}
+#B { 
+    background-color: var(--color-b);
+    background-image: linear-gradient(135deg, var(--color-b), #ff9e2d);
+}
+#C { 
+    background-color: var(--color-c);
+    background-image: linear-gradient(135deg, var(--color-c), #6cb043);
+}
+#D { 
+    background-color: var(--color-d);
+    background-image: linear-gradient(135deg, var(--color-d), #1e88e5);
+}
+
+/* Efeitos de texto nos labels */
+.tier-label {
+    font-family: 'Rock Salt', cursive;
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tier {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .tier-label {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .guitar-img {
+        width: 120px;
+        height: 40px;
+    }
+}
