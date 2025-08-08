@@ -16,34 +16,89 @@ body {
     background-color: var(--color-dark);
     color: var(--color-light);
     background-image: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
-                    url('https://i.imgur.com/JqYeZVL.jpg');
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
+/* HEADER ESTILIZADO */
 header {
     text-align: center;
     margin-bottom: 40px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 20px;
+    background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.8) 0%, 
+                rgba(70, 0, 0, 0.7) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
     border-radius: 10px;
-    border-bottom: 3px solid var(--color-s);
+    border-bottom: 4px solid #ff3860;
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 70%
+    );
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 h1 {
     font-family: 'Rock Salt', cursive;
     color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(255, 0, 0, 0.5),
+        0 0 20px rgba(255, 60, 0, 0.3);
+    letter-spacing: 2px;
+    transform: skew(-5deg);
+    display: inline-block;
+    background: linear-gradient(to right, #ff3860, #ff7f50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 15px;
 }
 
 header p {
-    font-size: 1.1rem;
-    color: #ccc;
+    font-size: 1.2rem;
+    color: #ff9999;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
 }
 
+header p::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff3860, transparent);
+    margin: 10px auto 0;
+}
+
+/* RESTANTE DO CSS (MANTIDO IGUAL) */
 .tier {
     display: flex;
     margin: 15px 0;
@@ -198,5 +253,13 @@ footer {
     .guitar-img {
         width: 120px;
         height: 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
     }
 }
