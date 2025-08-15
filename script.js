@@ -35,5 +35,16 @@ function drop(e) {
         clone.setAttribute('draggable', 'true');
         clone.addEventListener('dragstart', drag);
         e.target.appendChild(clone);
+        
+        // Esconde o elemento original
+        draggedElement.style.display = 'none';
     }
 }
+
+// Atualiza todos os eventos de drop para usar a função modificada
+document.querySelectorAll('.tier-items').forEach(item => {
+    item.ondrop = drop;
+    item.ondragover = allowDrop;
+    item.ondragenter = dragEnter;
+    item.ondragleave = dragLeave;
+});
